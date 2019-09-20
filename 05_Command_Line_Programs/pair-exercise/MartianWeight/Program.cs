@@ -22,7 +22,23 @@ namespace MartianWeight
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Please enter a series of earth weights (space-seperated): ");
+            string userInput = Console.ReadLine();
+            string[] earthWeightsString = userInput.Split(" ");
+            int[] earthWeights = new int[earthWeightsString.Length];
+            int[] marsWeights = new int[earthWeightsString.Length];
+            Console.WriteLine();
+            for (int i = 0; i < earthWeights.Length; i++)
+            {
+                earthWeights[i] = int.Parse(earthWeightsString[i]);
+                marsWeights[i] = (int)(earthWeights[i] * 0.378);
+                Console.WriteLine($"{earthWeights[i]} lbs. on Earth is {marsWeights[i]} lbs. on Mars.");
+            }
+
+            
+
+
+            Console.ReadLine();
         }
     }
 }
